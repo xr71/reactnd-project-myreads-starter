@@ -4,7 +4,6 @@ import Book from "./Book";
 class BookShelf extends Component {
   
   render() {
-    
     const { books, shelf } = this.props;
     const this_shelf_books = books.filter((book) => book.shelf === shelf);
     const shelfName = {
@@ -21,7 +20,7 @@ class BookShelf extends Component {
           </h2>
 
           <div className="bookshelf-books">
-            <div className="books-grid">
+            <ol className="books-grid">
               {console.log( this_shelf_books )}
               {
                 this_shelf_books.map((book) => (
@@ -34,7 +33,7 @@ class BookShelf extends Component {
                   </li>
                 ))
               }
-            </div>
+            </ol>
           </div>
         </div>
       </div>
