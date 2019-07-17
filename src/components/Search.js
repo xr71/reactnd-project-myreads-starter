@@ -12,9 +12,7 @@ class Search extends Component {
 
   performSearch = (q) => {
     // console.log(q);
-
     // BooksAPI.search(q).then((b) => console.log(b));
-
     BooksAPI.search(q).then(
       (b) => {
         this.setState({
@@ -150,7 +148,9 @@ class Search extends Component {
                 <li key={ book.id }>
                   <Book title={book.title} authors={ book.authors } 
                       thumbnail={ book.imageLinks ? 
-                      book.imageLinks.thumbnail : "" } />
+                      book.imageLinks.thumbnail : "" } 
+                      updateShelf = { this.props.updateShelf }
+                      book={ book } />
                 </li>
               )) }
             </ol>
