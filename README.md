@@ -6,16 +6,22 @@ The starter files are provided by Udacity @ https://github.com/udacity/reactnd-p
 
 The project is bootstrapped using [Create React App](https://github.com/facebookincubator/create-react-app). 
 
-## TL;DR
 
-To get started with the app right away:
+## To get started with the app right away:
 
-* git clone this repo and then `cd` in to xr-reactnd-project-myreads
+* git clone this repo and then `cd` in to `xr-reactnd-project-myreads`
 * install all project dependencies with `npm install` or `yarn install`
 * start the development server with `npm start` or `yarn start`
 * this will start the app in your default browser or if a default browser does not launch, you can visit the app at `localhost:3000`
 
+## To use the app
 
+* the home page will render three book shelves with some starter books on each shelf
+* you have the option to click on the green drop down button on each book and move it to a different shelf (such as moving from `currently reading` to `read` should you have finished this particular book)
+* next, you will see a large plus sign green button at the bottom, this will allow you to search for new books
+* it is very important here to note that this demo project only has a few set of search terms pre-cached
+* to make the search terms readily available to the end user, I have made the input field a searchable drop down of only the allowed terms, this will ensure that you will get search results back on click of a dropdown option
+* once a search result returns a set of books, you can navigate it the same way as any book on the homepage, by selecting the down arrow button and moving the selected book to one of your shelves
 
 # From Udacity 
 
