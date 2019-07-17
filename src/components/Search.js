@@ -10,6 +10,7 @@ class Search extends Component {
     resultBooks: []
   }
 
+
   performSearch = (q) => {
     // console.log(q);
     // BooksAPI.search(q).then((b) => console.log(b));
@@ -106,6 +107,9 @@ class Search extends Component {
   
 
   render() {
+    const { booksOnShelf } = this.props;
+    const booksOnShelfId = booksOnShelf.map((b) => b.id);
+
     return (
       <div className="search-books">
         <div className="search-books-bar">
@@ -138,13 +142,10 @@ class Search extends Component {
 
         <div className="search-books-results">
           <div className="results">
-            <p>
-              {this.state.resultBooks.length > 0 ? `Returned ${this.state.resultBooks.length} 
-                books about ${this.state.query}` : ""
-              }
-            </p>
             <ol className="books-grid">
-              { this.state.resultBooks.map((book) => (
+              { this.state.resultBooks.filter(
+                (b) => booksOnShelfId.indexOf(b.id) === -1
+              ).map((book) => (
                 <li key={ book.id }>
                   <Book title={book.title} authors={ book.authors } 
                       thumbnail={ book.imageLinks ? 
