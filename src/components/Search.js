@@ -141,7 +141,9 @@ class Search extends Component {
         <div className="search-books-results">
           <div className="results">
             <p>
-              {this.state.resultBooks.length > 0 ? `Returned ${this.state.resultBooks.length} books` : ""}
+              {this.state.resultBooks.length > 0 ? `Returned ${this.state.resultBooks.length} 
+                books about ${this.state.query}` : ""
+              }
             </p>
             <ol className="books-grid">
               { this.state.resultBooks.map((book) => (

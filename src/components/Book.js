@@ -12,7 +12,7 @@ class Book extends Component {
             } }
           ></div>
           <div className="book-shelf-changer">
-            <ChangeShelf />
+            <ChangeShelf updateShelf={ this.props.updateShelf } book={ this.props.book }/>
           </div>
         </div>
 

@@ -21,15 +21,17 @@ class BookShelf extends Component {
 
           <div className="bookshelf-books">
             <ol className="books-grid">
-              {console.log( this_shelf_books )}
+              {/* {console.log( this_shelf_books )} */}
               {
                 this_shelf_books.map((book) => (
                   <li key={ book.id }>
-                    <Book title={ book.title} 
+                    <Book 
+                      book={ book }
+                      title={ book.title} 
                       authors={ book.authors } 
                       thumbnail={ book.imageLinks ? 
-                      book.imageLinks.thumbnail : "" } 
-                    />
+                      book.imageLinks.thumbnail : "" }
+                      updateShelf={this.props.updateShelf} />
                   </li>
                 ))
               }

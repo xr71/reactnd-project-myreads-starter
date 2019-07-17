@@ -13,10 +13,23 @@ class BooksApp extends React.Component {
   componentDidMount() {
     // the returned books array has objects 
     // with key shelf [currentlyReading, wantToRead, read]
-    BooksAPI.getAll().then((books) => {
-      this.setState(() => ({
-        books: books
-      }))
+    this.refreshBooks()
+  }
+
+  refreshBooks = () => {
+    BooksAPI.getAll().then(
+      (books) => {
+        this.setState(() => ({
+          books: books
+        }))
+    })
+  }
+
+  // update api takes in book, not bookid
+  updateShelf = (book, shelf) => {
+    BooksAPI.update(book, shelf).then(() => {
+      console.log("moved")
+      this.refreshBooks()
     })
   }
 
@@ -26,7 +39,8 @@ class BooksApp extends React.Component {
           <Route exact path="/" 
             render={() => (
               <AllShelves 
-                books={this.state.books}
+                books={ this.state.books }
+                updateShelf={ this.updateShelf }
               />
             )}
           />

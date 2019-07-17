@@ -10,9 +10,17 @@ class AllShelves extends Component {
           <h1>MyReads</h1>
         </div>
         <div className="list-books-content">
-          <BookShelf books={this.props.books} shelf="currentlyReading" />
-          <BookShelf books={this.props.books} shelf="wantToRead" />
-          <BookShelf books={this.props.books} shelf="read" />
+          <BookShelf books={this.props.books} 
+            shelf="currentlyReading" 
+            updateShelf={this.props.updateShelf} />
+
+          <BookShelf books={this.props.books} 
+            shelf="wantToRead" 
+            updateShelf={this.props.updateShelf} />
+
+          <BookShelf books={this.props.books} 
+            shelf="read" 
+            updateShelf={this.props.updateShelf} />
         </div>
         <OpenSearch />
       </div>
